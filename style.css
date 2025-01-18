@@ -1,0 +1,183 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+}
+
+/* Header Section */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #4CAF50;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.header-content {
+  text-align: center;
+  flex: 1;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+header p {
+  margin: 5px 0 0;
+  font-size: 1.2em;
+}
+
+.hamburger-menu {
+  flex: 0;
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.menu-icon {
+  font-size: 2em;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.menu-content {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 5;
+}
+
+.menu-content a {
+  text-decoration: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.menu-content a:hover {
+  background-color: #45a049;
+}
+
+header .logo {
+  margin-left: 20px;
+}
+
+header .logo img {
+  max-height: 80px;
+  width: auto;
+}
+
+/* Main Content */
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  justify-content: flex-start;
+  padding: 10px;
+  max-width: 80%;
+}
+
+.card {
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 8px;
+  padding: 60px 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, background-color 0.3s ease;
+}
+
+.card:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.right-side {
+  max-width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 20px;
+}
+
+.saraswati-image img {
+  max-width: 200px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.instrument-images img {
+  max-width: 100px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+/* Footer Section */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+}
+
+footer h2 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+footer p {
+  margin: 5px 0;
+  font-size: 1em;
+}
+
+footer a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+.back-button {
+  position: absolute;
+  bottom: 20px; /* Places the button 20px above the bottom of the page */
+  left: 50%; /* Centers the button horizontally */
+  transform: translateX(-50%); /* Adjusts for the button's width to perfectly center it */
+  padding: 10px 20px;
+  color: white;
+  background-color: #4CAF50;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #45a049;
+}

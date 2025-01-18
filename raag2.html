@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raag Bhairav</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            background-color: #f4f4f9;
+            height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #ffffff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #4CAF50;
+            text-align: center;
+        }
+
+        p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .language-toggle {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 10px 20px;
+            color: white;
+            background-color: #4CAF50;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .language-toggle:hover {
+            background-color: #45a049;
+        }
+
+        .description, .notation, .section {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .notation p {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 5px 0;
+        }
+
+        .bandish-toggle {
+            cursor: pointer;
+            color: #4CAF50;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 10px;
+            text-decoration: underline;
+        }
+
+        .bandish-options {
+            margin-top: 10px;
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        .bandish-notation {
+            font-size: 1.2em;
+            margin-top: 10px;
+            color: #333;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .bandish-button {
+            margin-top: 10px;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .bandish-button:hover {
+            background-color: #45a049;
+        }
+        .komal {
+            display: inline-block;
+            position: relative;
+        }
+        .komal:after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            border-bottom: 2px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="language-toggle" onclick="toggleLanguage()">हिंदी / English</button>
+        <h1 id="title">Raag Bhairav</h1>
+        <div id="description" class="description">
+            <p>
+                Raag Bhairav is one of the fundamental 
+                ragas in Indian classical music and is part of the Bhairav Thaat. Known for its meditative and solemn mood, it evokes feelings of devotion and seriousness. Raag Bhairav is traditionally sung during the early hours of the morning, creating a spiritual atmosphere. The raga employs Komal (flat) Re and Komal Dha, along with all other notes being Shuddh (natural), giving it a distinct and introspective character. The raga is versatile and used in a variety of compositions, ranging from devotional music to classical bandish and even semi-classical renditions.            </p>
+        </div>
+        <h2 id="aarohAvrohHeading">Aaroh and Avroh</h2>
+        <p id="aaroh" class="notation"><strong>Aaroh:</strong> Sa <span class="komal">Re</span> Ga Ma\' Pa <span class="komal">Dha</span> Ni Sa'</p>
+        <p id="avroh" class="notation"><strong>Avroh:</strong> Sa Ni <span class="komal">Dha</span> Pa Ma\' Ga <span class="komal">Re</span> Sa</p>
+        <p id="pakad" class="notation"><strong>pakad:</strong> Ga Ma <span class="komal">Dha</span> <span class="komal">Dha</span> Pa, Ma Pa Ga Ma <span class="komal">Re</span> <span class="komal">Re</span> Sa</p>
+
+        <!-- Bandish Section -->
+        <div class="section">
+            <h2><button class="bandish-toggle" onclick="showBandishOptions()" id="bandishButton">Bandish</button></h2>
+            <p id="bandishHint" class="hint-text">Click to view Bandish</p>
+
+<div id="bandishOptions" class="bandish-options" style="display: none;">
+    <button class="bandish-button" onclick="showBandishNotation('eriAaliPiyaBin')">Eri Aali Piya Bin</button>
+    <button class="bandish-button" onclick="showBandishNotation('payaliyaMoriBaaje')">Payaliya Mori Baaje</button>
+</div>
+
+        </div>
+
+        <div id="bandishNotation" class="bandish-notation" style="display: none; text-align: center; "></div>
+
+        <!-- Added Tarana and Taan sections -->
+        <div class="section">
+            <h2>Tarana</h2>
+            <div class="notation">
+                <p>रा री रे सा | मा मा पा रे | पा ध मा सा | नि ग रे सा</p>
+                <p>ला पा सा रे | नि मा ध पा | ग रे ग सा | रे सा रे सा</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Taan</h2>
+            <div class="notation">
+                <p>सा रे ग मा | पा ध नि सा | ग रे मा रे | सा मा रे पा</p>
+                <p>ग मा रे सा | ध नि मा ग | सा रे ग मा | पा ग मा रे</p>
+            </div>
+        </div>
+       <!-- Only one back button, placed inside a centered container -->
+<div class="back-button-container">
+    <a href="index.html" class="back-button">Back to Home</a>
+</div>
+
+<style>
+    .back-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .back-button:hover {
+        background-color: #45a049;
+    }
+
+    /* Centering the button */
+    .back-button-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+</style>
+
+        
+    </div>
+
+    <script>
+        let isHindi = false;
+        function toggleLanguage() {
+            const title = document.getElementById('title');
+            const description = document.getElementById('description');
+            const aaroh = document.getElementById('aaroh');
+            const avroh = document.getElementById('avroh');
+            const pakad = document.getElementById('pakad');
+            const tarana = document.querySelector('.section:nth-of-type(4) .notation');
+            const taan = document.querySelector('.section:nth-of-type(5) .notation');
+            const bandishButtons = document.querySelectorAll('.bandish-button');
+            const aarohAvrohHeading = document.getElementById('aarohAvrohHeading');
+            const bandishOptions = document.getElementById('bandishOptions');
+            const bandishHint = document.getElementById('bandishHint');
+            
+            if (!isHindi) {
+                title.textContent = 'राग कल्याण';
+                description.innerHTML = '<p>राग कल्याण भारतीय शास्त्रीय संगीत का एक प्रमुख राग है। यह कल्याण थाट से संबंधित है और इसे भक्ति, शांति और आनंद की भावनाओं से जोड़ा जाता है। यह आमतौर पर शाम के समय गाया जाता है।</p>';
+                aaroh.innerHTML = '<strong>आरोह:</strong> सा <span class="komal">रे</span> ग म प <span class="komal">ध</span> नि सां';
+        avroh.innerHTML = '<strong>अवरोह:</strong> सां नि <span class="komal">ध</span> प म ग <span class="komal">रे</span> सा';
+        pakad.innerHTML = '<strong>पकड़:</strong> ग म <span class="komal">ध</span> <span class="komal">ध</span> प, म प ग म <span class="komal">रे</span> <span class="komal">रे</span> सा';
+                tarana.innerHTML = '<p>रा री रे सा | मा मा पा रे | पा ध मा सा | नि ग रे सा</p><p>ला पा सा रे | नि मा ध पा | ग रे ग सा | रे सा रे सा</p>';
+                taan.innerHTML = '<p>सा रे ग मा | पा ध नि सा | ग रे मा रे | सा मा रे पा</p><p>ग मा रे सा | ध नि मा ग | सा रे ग मा | पा ग मा रे</p>';
+                bandishButtons[0].textContent = 'एरी आली पिया बिन';
+                bandishButtons[1].textContent = 'पायलिया मोरी बाजे';
+                aarohAvrohHeading.textContent = 'आरोह और अवरोह';
+                bandishButton.textContent = 'बंदिश';
+                bandishHint.textContent = 'बंदिश देखने के लिए क्लिक करें'; // Update hint in Hindi
+             
+
+            } else {
+                title.textContent = 'Raag Kalyan';
+                description.innerHTML = '<p>Raag Kalyan is a prominent raga in Indian classical music. It belongs to the Kalyan Thaat and is often associated with the emotions of devotion, serenity, and joy. It is traditionally performed in the evening, creating a mood of tranquility and upliftment.</p>';
+                aaroh.innerHTML = '<strong>Aaroh:</strong> Sa <span class="komal">Re</span> Ga Ma\' Pa <span class="komal">Dha</span> Ni Sa';
+        avroh.innerHTML = '<strong>Avroh:</strong> Sa Ni <span class="komal">Dha</span> Pa Ma\' Ga <span class="komal">Re</span> Sa';
+        pakad.innerHTML = '<strong>Pakad:</strong> Ga Ma <span class="komal">Dha</span> <span class="komal">Dha</span> Pa, Ma Pa Ga Ma <span class="komal">Re</span> <span class="komal">Re</span> Sa';
+                tarana.innerHTML = '<p>Ra Ri Re Sa | Ma Ma Pa Re | Pa Dha Ma Sa | Ni Ga Re Sa</p><p>La Pa Sa Re | Ni Ma Dha Pa | Ga Re Ga Sa | Re Sa Re Sa</p>';
+                taan.innerHTML = '<p>Sa Re Ga Ma | Pa Dha Ni Sa | Ga Re Ma Re | Sa Ma Re Pa</p><p>Ga Ma Re Sa | Dha Ni Ma Ga | Sa Re Ga Ma | Pa Ga Ma Re</p>';
+                bandishButtons[0].textContent = 'Eri Aali Piya Bin';
+                bandishButtons[1].textContent = 'Payaliya Mori Baaje';
+                aarohAvrohHeading.textContent = 'Aaroh and Avroh';
+                bandishButton.textContent = 'Bandish';
+                bandishHint.textContent = 'Click to view Bandish'; // Update hint in English
+            
+
+                
+            }
+            isHindi = !isHindi;
+        }
+
+        function showBandishOptions() {
+            const bandishOptions = document.getElementById('bandishOptions');
+            if (bandishOptions.style.display === "none") {
+                bandishOptions.style.display = "block";
+            } else {
+                bandishOptions.style.display = "none";
+            }
+        }
+
+        function showBandishNotation(bandish) {
+            const bandishNotation = document.getElementById('bandishNotation');
+            if (bandish === 'eriAaliPiyaBin') {
+        if (isHindi) {
+            bandishNotation.innerHTML = `
+            <h3>Sthayi</h3>
+            <p>नि ध प — | — रे — सा | ग  रे  ग  ग | — — प  प |</p>
+                    <p>ये ऽ  री ऽ | ऽ आ ऽ ली | पि या बि न | ऽ  ऽ  स खी |</p>
+                    <p>O | 3 | × | 2</p>
+                    <p>ग  म\' ग प | प ध प प | निध नि प प |   रे  रे सा सा |</p>
+                    <p>क ल ना प | र त मो हे | घऽ  री प ल | छि न दि न |</p>
+                    <p>O | 3 | × | 2</p>
+                    <h3>Antara</h3>
+                    <p>प प सां सां | सां ऽ सां सां | सां ऽ नि ध |  नि ध  प  प |</p>
+                    <p>ज ब से  पि | या ऽ  प   र  |  दे ऽ  स ग |  व  न की न्हो |</p>
+                    <p>O | 3 | × | 2</p>
+                    <p>प गं  रें सां | नि ध प प  | ध नि ध प | रे  रे सा सा |</p>
+                    <p>र ति यां क | ट त मो हे | ता  ऽ  ऽ रे | गि न गि न |</p>
+                    <p>O | 3 | × | 2</p>
+            `;
+        } else {
+            bandishNotation.innerHTML = `
+            <h3>Sthayi</h3>
+            <p>ni dha Pa — | — re — sa | ga  re  ga  ga | — — Pa  Pa |</p>
+<p>ye  ऽ  ri  ऽ | ऽ aa  ऽ li | pi ya bi na | ऽ  ऽ  sa khi |</p>
+<p>O | 3 | × | 2</p>
+<p>ga  me  ga Pa | Pa dha Pa Pa | ni dha ni Pa Pa |   re  re sa sa |</p>
+<p>ka la na Pa | ra ta mo he | ghऽ  ri Pa la | chi na di na |</p>
+<p>O | 3 | × | 2</p>
+<h3>Antara</h3>
+<p>Pa Pa saṅ saṅ | saṅ ऽ saṅ saṅ | saṅ ऽ ni dha |  ni dha  Pa  Pa |</p>
+<p>ja ba se  pi | ya ऽ  Pa   ra  |  de ऽ  sa ga |  va  na ki na ho |</p>
+<p>O | 3 | × | 2</p>
+<p>Pa gaṅ  reṅ saṅ | ni dha Pa Pa  | dha ni dha Pa | re  re sa sa |</p>
+<p>ra ti yaṅ ka | Ta ta mo he | ta  ऽ  ऽ re | gi na gi na |</p>
+<p>O | 3 | × | 2</p>
+            `;
+        }
+    } else if (bandish === 'payaliyaMoriBaaje') {
+        if (isHindi) {
+            bandishNotation.innerHTML = `
+                <h3>Sthayi</h3>
+                <p>रे सा | ग मा रे | सा रे | ग रे सा</p>
+                <p>पा या ला ली | मो री बा या जे | ग| त्शि ख</p>
+            `;
+        } else {
+            bandishNotation.innerHTML = `
+                <h3>Sthayi</h3>
+                <p>Re Sa | Ga Ma Re | Sa Re | Ga Re Sa</p>
+                <p>Paa Ya La Li | Mo Ri Ba Ya Je | Ga | Tshi Kh</p>
+            `;
+        }
+    }
+
+    bandishNotation.style.display = 'block';
+        }
+    </script>
+    
+</body>
+</html>
